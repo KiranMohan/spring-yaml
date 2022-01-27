@@ -17,6 +17,8 @@ public class Example {
     private String name;
     @Value("${example.myArray}")
     private String[] myArray;
+    @Value("${example.myList")
+    private List<String> myList;
 
     public List<String> getMyList() {
         return myList;
@@ -26,8 +28,6 @@ public class Example {
         this.myList = myList;
     }
 
-    @Value("${example.myList")
-    private List<String> myList;
 
     public boolean isEnabled() {
         return enabled;
