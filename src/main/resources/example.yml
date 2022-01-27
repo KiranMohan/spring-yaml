@@ -1,0 +1,6 @@
+example:
+  enabled: true
+  name: "org.ktest"
+  myArray:
+    - "abc"
+    - "def"
