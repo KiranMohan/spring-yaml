@@ -17,7 +17,7 @@ public class Example {
     private String name;
     @Value("${example.myArray}")
     private String[] myArray;
-    @Value("${example.myList")
+    @Value("${example.myList}")
     private List<String> myList;
 
     public List<String> getMyList() {
