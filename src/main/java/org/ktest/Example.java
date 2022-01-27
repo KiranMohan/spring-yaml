@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 import java.util.Arrays;
+import java.util.List;
 
 @Configuration
 @PropertySource(value = "classpath:example.yml", factory = YamlPropertySourceFactory.class)
@@ -16,6 +17,17 @@ public class Example {
     private String name;
     @Value("${example.myArray}")
     private String[] myArray;
+
+    public List<String> getMyList() {
+        return myList;
+    }
+
+    public void setMyList(List<String> myList) {
+        this.myList = myList;
+    }
+
+    @Value("${example.myList")
+    private List<String> myList;
 
     public boolean isEnabled() {
         return enabled;
@@ -47,6 +59,7 @@ public class Example {
                 "enabled=" + enabled +
                 ", name='" + name + '\'' +
                 ", myArray=" + Arrays.toString(myArray) +
+                ", myList=" + myList +
                 '}';
     }
 }

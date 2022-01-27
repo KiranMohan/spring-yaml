@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(SpringExtension.class)
@@ -21,11 +23,13 @@ class ExampleTest {
     void test() {
         log.debug("enabled: {}",example.isEnabled());
         log.debug("name: {}",example.getName());
-        log.debug("myArray: {}",example.getMyArray());
+        log.debug("myArray: {}", Arrays.toString(example.getMyArray()));
+        log.debug("myList: {}",example.getMyList());
 
         assertTrue(example.isEnabled());
         assertEquals("org.ktest", example.getName());
         assertArrayEquals(new String[]{"abc", "def"}, example.getMyArray());
+        assertEquals(Arrays.asList("ghi", "jkl"), example.getMyList());
 
     }
 
